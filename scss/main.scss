@@ -1,0 +1,99 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+	margin:0;
+	padding: 0;
+}
+html{
+	font-size: 1.25em;
+	line-height: 1.7;
+}
+$primary-blue: hsl(207, 44%, 29%);
+$secondary-blue: hsl(208, 48%, 34%);
+$black:hsl(0, 0, 20);
+$gray:hsl(0, 0, 29);
+$light-gray:hsl(0, 0, 97%);
+$white:#ffffff;
+
+$oswald: 'Oswald', sans-serif;
+
+h1{
+	color:$black;
+	font-family:$oswald;
+	font-size: 3.5rem;
+	text-transform: uppercase;
+}
+h2{
+	color:$white;
+	font-weight: 400;
+	&.big{
+		color:$light-gray;
+		font-family: $oswald;
+		font-size: 6rem;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+}
+a{
+	color: $secondary-blue;
+	text-decoration: none;
+}
+nav{
+	a{
+		color: $gray;
+		padding-right:2rem;
+		&:last-child{
+			padding-right: 0;
+		}		
+	}
+
+}
+.main-logo img{
+	max-width: 300px;
+}
+.hi{
+	h1{
+		line-height: 1.2;
+	}
+	p{
+		font-family: $oswald;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+	img{
+		display: none;
+	}	
+} 
+.button{
+	background: $primary-blue;
+	border:2px solid $primary-blue;
+	color:$white;
+	font-size: .8rem;
+	margin-bottom: 1rem;
+	padding:.5rem .75rem;
+	text-decoration: none;
+	&.outline{
+		background: $white;
+		border:2px solid $primary-blue;
+		color:$primary-blue;
+	}
+}
+.secondary-blue{
+	background: $secondary-blue;
+}
+footer{
+	background: $light-gray;
+	padding:2rem 0 3rem;
+	.copyright{
+		font-size: .7rem;
+	}
+	h3{
+		font-weight: 400;
+		margin-bottom: .9rem;
+	}
+	ul{
+		font-size: .9rem;
+		li{
+
+		}
+	}
+}
