@@ -1,11 +1,12 @@
 *{
+    box-sizing:border-box;
     font-family: 'Open Sans', sans-serif;
 	margin:0;
 	padding: 0;
 }
 html{
 	font-size: 1.25em;
-	line-height: 1.7;
+	line-height: 1.25;
 }
 $primary-blue: hsl(207, 44%, 29%);
 $secondary-blue: hsl(208, 48%, 34%);
@@ -16,6 +17,9 @@ $white:#ffffff;
 
 $oswald: 'Oswald', sans-serif;
 
+section{
+	padding: 5rem 0;
+}
 h1{
 	color:$black;
 	font-family:$oswald;
@@ -28,8 +32,10 @@ h2{
 	&.big{
 		color:$light-gray;
 		font-family: $oswald;
-		font-size: 6rem;
+		font-size: 6.5rem;
 		font-weight: 700;
+		letter-spacing: -5px;
+		line-height: 1;
 		text-transform: uppercase;
 	}
 }
@@ -71,14 +77,37 @@ nav{
 	margin-bottom: 1rem;
 	padding:.5rem .75rem;
 	text-decoration: none;
+	transition:background .3s;
 	&.outline{
 		background: $white;
 		border:2px solid $primary-blue;
 		color:$primary-blue;
+		transition:background .3s;
+		&:hover{
+			background: $primary-blue;
+			color: $white;
+		}
+	}
+	&:hover{
+		background: $secondary-blue;
 	}
 }
 .secondary-blue{
 	background: $secondary-blue;
+}
+.example1, .example2{
+	background: $light-gray;
+	img{
+		background: $black;
+		margin: .5rem .5rem 1rem .5rem;
+		padding:.5rem;
+	}
+	p{
+		font-size: .9rem;
+	}
+	p.small-header{
+		font-size: 1.2rem;
+	}
 }
 footer{
 	background: $light-gray;
@@ -93,7 +122,8 @@ footer{
 	ul{
 		font-size: .9rem;
 		li{
-
+		background: url(../img/bullet-arrow.svg) 0 3px no-repeat;
+		padding-left: 35px;
 		}
 	}
 }
