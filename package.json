@@ -1,0 +1,20 @@
+{
+  "name": "2020",
+  "version": "1.0.0",
+  "description": "2020 JD relaunch",
+  "main": "index.js",
+  "scripts": {
+    "test": "run gulp"
+  },
+  "author": "Jerad Horning",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "browserlist": "^1.0.1",
+    "gulp-load-plugins": "^2.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
