@@ -1,11 +1,11 @@
 const { dest, parallel, series, src, watch } = require('gulp');
-const uglify        = require('gulp-uglify');
 const browserSync   = require('browser-sync').create();
-const $               = require('gulp-load-plugins')();
-const autoprefixer    = require('autoprefixer');
-const postcss         = require('gulp-postcss');
-const sass            = require('gulp-sass');
-const oldgulp          = require('gulp');
+const $             = require('gulp-load-plugins')();
+const autoprefixer  = require('autoprefixer');
+const postcss       = require('gulp-postcss');
+const sass          = require('gulp-sass');
+const oldgulp       = require('gulp');
+const terser        = require('gulp-terser');
 const sassPaths = [
   'scss'
 ];
@@ -13,7 +13,7 @@ const sassPaths = [
 function scripts(){
   return src('js/*.js')
     .pipe(src('js/*.js'))
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(dest('min-js'))
     // reloads the current webpage when changes are made
     .pipe(browserSync.stream());
