@@ -24,3 +24,7 @@ node_modules/
 
 #ignore images
 img/
+
+#hidden file
+.DS_Store
+.DS_Store
