@@ -4,18 +4,23 @@
 	margin:0;
 	padding: 0;
 }
-html{
-	font-size: 1.25em;
-	line-height: 1.25;
-}
+// Colors
 $primary-blue: hsl(207, 44%, 29%);
 $secondary-blue: hsl(208, 48%, 34%);
 $black:hsl(0, 0, 20);
 $gray:hsl(0, 0, 29);
 $light-gray:hsl(0, 0, 97%);
 $white:#ffffff;
-
+// Fonts
 $oswald: 'Oswald', sans-serif;
+
+html{
+	font-size: 1.25em;
+	line-height: 1.25;
+}
+body{
+	overflow-x:hidden;
+}
 
 section{
 	padding: 5rem 0;
@@ -43,18 +48,68 @@ a{
 	color: $secondary-blue;
 	text-decoration: none;
 }
-nav{
+header{
+	align-items:center;
+	display: flex;
+	justify-content:space-around;
+}
+.top-menu{
+	background: $white;
+	justify-content:space-around;
+	align-items:center;
+	display: flex;
+	flex-direction:column;
+	height: 92vh;
+	left:0;
+	position: absolute;
+	top:8vh;
+	width:100%;
+	transform:translateX(100%);
+	transition: transform .5s ease-in;
 	a{
 		color: $gray;
-		padding-right:2rem;
-		&:last-child{
-			padding-right: 0;
-		}		
+		letter-spacing: 1px;	
+		opacity: 0;
 	}
-
+	&.nav-active{
+		transform:translateX(0%);
+	}
+}
+@keyframes navLinkFade{
+	from{
+		opacity: 0;
+		transform:translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform:translateX(0px);
+	}
+}
+.burger{
+	display: block;
+	&:hover{
+		cursor: pointer;
+	}
+}
+.burger div{
+	background: $gray;
+	height:2px;
+	margin:6px;
+	transition: all .3s ease;
+	width:25px;
+}
+.toggle .line1{
+	transform:rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+	opacity:0;
+}
+.toggle .line3{
+	transform:rotate(45deg) translate(-5px, -6px);
 }
 .main-logo img{
-	max-width: 300px;
+	max-width: 250px;
+	height: 8vh;
 }
 .hi{
 	h1{
@@ -126,4 +181,36 @@ footer{
 		padding-left: 35px;
 		}
 	}
+}
+@media only screen and (min-width: 40.063em) {
+	.burger{
+		display: none;
+	}
+	.top-menu{
+		display: flex;
+		flex-direction:row;
+		height:8vh;
+		justify-content:space-around;
+		position: relative;
+		top:0;
+		width:50%;
+		transform:translateX(0%);
+		a{
+			opacity: 1;
+		}
+	}
+}
+@media only screen and (min-width: 64em) {
+	.top-menu{
+		width:40%;
+	}
+
+}
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 90.063em) {
+
+}
+/* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 120.063em) {
+
 }
