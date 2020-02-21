@@ -19,11 +19,14 @@ html{
 	line-height: 1.25;
 }
 body{
+	display: flex;
+	flex-direction:column;
+	justify-content:space-around;
 	overflow-x:hidden;
 }
 
 section{
-	padding: 5rem 0;
+	padding: 1rem 0;
 }
 h1{
 	color:$black;
@@ -33,6 +36,7 @@ h1{
 }
 h2{
 	color:$white;
+	font-size:1rem;
 	font-weight: 400;
 	&.big{
 		color:$light-gray;
@@ -49,6 +53,15 @@ a{
 	text-decoration: none;
 }
 header{
+	display: flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+}
+.header{
+	max-width: 90%;
+}
+.header, .main{
 	align-items:center;
 	display: flex;
 	justify-content:space-around;
@@ -108,7 +121,8 @@ header{
 	transform:rotate(45deg) translate(-5px, -6px);
 }
 .main-logo img{
-	max-width: 250px;
+	padding:0 20px 0 0;
+	max-width: 90%;
 	height: 8vh;
 }
 .hi{
@@ -121,7 +135,7 @@ header{
 		text-transform: uppercase;
 	}
 	img{
-		display: none;
+		// display: none;
 	}	
 } 
 .button{
@@ -149,10 +163,20 @@ header{
 }
 .secondary-blue{
 	background: $secondary-blue;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	.description{
+		max-width: 90%;
+	}
+}
+.recent-work img{
+	max-height: 600px;
 }
 .example1, .example2{
 	background: $light-gray;
-	img{
+	.example1imgs, .example2imgs{
 		background: $black;
 		margin: .5rem .5rem 1rem .5rem;
 		padding:.5rem;
@@ -183,6 +207,9 @@ footer{
 	}
 }
 @media only screen and (min-width: 40.063em) {
+	h2{
+		font-size:1.3rem;
+	}
 	.burger{
 		display: none;
 	}
@@ -199,18 +226,34 @@ footer{
 			opacity: 1;
 		}
 	}
+	section{
+		padding: 6rem 0;
+	}
 }
 @media only screen and (min-width: 64em) {
+	h2{
+		font-size:1.75rem;
+	}
 	.top-menu{
 		width:40%;
 	}
+	.header, .secondary-blue .description{
+			max-width: 48rem;
+	}
+	section{
+		padding: 8rem 0;
+	}
 
 }
-/* min-width 1025px, large screens */
+/* large screens */
 @media only screen and (min-width: 90.063em) {
-
+	.header, .secondary-blue .description{
+			max-width: 64rem;
+	}
 }
-/* min-width 1441px, xlarge screens */
+/* xlarge screens */
 @media only screen and (min-width: 120.063em) {
-
+	.header, .secondary-blue .description{
+			max-width: 84rem;
+	}
 }
