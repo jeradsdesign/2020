@@ -59,12 +59,75 @@ header{
 	justify-content:center;
 }
 .header{
-	max-width: 90%;
+	width: 90%;
 }
 .header, .main{
 	align-items:center;
 	display: flex;
-	justify-content:space-around;
+	justify-content:space-between;
+}
+.main{
+	flex-direction:column;
+	justify-content:center;
+}
+.main-logo img{
+	padding:0 20px 0 0;
+	max-width: 90%;
+	height: 8vh;
+}
+.hi{
+	display: flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	flex:0 0 35rem;
+	h1{
+		line-height: 1.2;
+	}
+	p{
+		font-family: $oswald;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+	img{
+		// display: none;
+		margin-top: -50px;
+		transform:translateX(32%);
+	}	
+} 
+.button{
+	background: $primary-blue;
+	border:2px solid $primary-blue;
+	color:$white;
+	font-size: .8rem;
+	margin-bottom: 1rem;
+	padding:.5rem .75rem;
+	text-decoration: none;
+	transition:background .3s;
+	&.outline{
+		background: $white;
+		border:2px solid $primary-blue;
+		color:$primary-blue;
+		transition:background .3s;
+		&:hover{
+			background: $primary-blue;
+			color: $white;
+		}
+	}
+	&:hover{
+		background: $secondary-blue;
+	}
+}
+.secondary-blue{
+	background: $secondary-blue;
+}
+section.secondary-blue{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	.description{
+		max-width: 90%;
+	}
 }
 .top-menu{
 	background: $white;
@@ -106,6 +169,7 @@ header{
 }
 .burger div{
 	background: $gray;
+	border-radius: 1px;
 	height:2px;
 	margin:6px;
 	transition: all .3s ease;
@@ -119,57 +183,6 @@ header{
 }
 .toggle .line3{
 	transform:rotate(45deg) translate(-5px, -6px);
-}
-.main-logo img{
-	padding:0 20px 0 0;
-	max-width: 90%;
-	height: 8vh;
-}
-.hi{
-	h1{
-		line-height: 1.2;
-	}
-	p{
-		font-family: $oswald;
-		margin-bottom: 1rem;
-		text-transform: uppercase;
-	}
-	img{
-		// display: none;
-	}	
-} 
-.button{
-	background: $primary-blue;
-	border:2px solid $primary-blue;
-	color:$white;
-	font-size: .8rem;
-	margin-bottom: 1rem;
-	padding:.5rem .75rem;
-	text-decoration: none;
-	transition:background .3s;
-	&.outline{
-		background: $white;
-		border:2px solid $primary-blue;
-		color:$primary-blue;
-		transition:background .3s;
-		&:hover{
-			background: $primary-blue;
-			color: $white;
-		}
-	}
-	&:hover{
-		background: $secondary-blue;
-	}
-}
-.secondary-blue{
-	background: $secondary-blue;
-	display: flex;
-	flex-direction:column;
-	align-items:center;
-	justify-content:center;
-	.description{
-		max-width: 90%;
-	}
 }
 .recent-work img{
 	max-height: 600px;
@@ -237,8 +250,8 @@ footer{
 	.top-menu{
 		width:40%;
 	}
-	.header, .secondary-blue .description{
-			max-width: 48rem;
+	.header, .hi, .secondary-blue .description{
+		width: 48rem;
 	}
 	section{
 		padding: 8rem 0;
@@ -247,13 +260,13 @@ footer{
 }
 /* large screens */
 @media only screen and (min-width: 90.063em) {
-	.header, .secondary-blue .description{
-			max-width: 64rem;
+	.header, .hi, .secondary-blue .description{
+		width: 64rem;
 	}
 }
 /* xlarge screens */
 @media only screen and (min-width: 120.063em) {
-	.header, .secondary-blue .description{
-			max-width: 84rem;
+	.header, .hi, .secondary-blue .description{
+		width: 84rem;
 	}
 }

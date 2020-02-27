@@ -43,8 +43,8 @@ function serve() {
   watch("*.html").on('change', browserSync.reload);
 
 }
-// This default function runs when 'foundation watch' is entered in terminal
+// This default function runs when 'gulp' is entered in terminal
 // The ignoreInitial: false part tells it to run scripts, css, and serve when 'foundation watch' is first entered and not to wait until a change is made to a file
 exports.default = function (){
-  watch('*', { ignoreInitial: false }, series(scripts, css, serve));
+  watch('*', { ignoreInitial: false }, series(serve));
 };
