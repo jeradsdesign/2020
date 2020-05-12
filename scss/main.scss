@@ -5,14 +5,12 @@
 	padding: 0;
 }
 // Colors
-$primary-blue: hsl(207, 44%, 29%);
-$secondary-blue: hsl(208, 48%, 34%);
+$primary-blue: #0160ba;
+$secondary-blue: #1b88f0;
 $black:hsl(0, 0, 20);
 $gray:hsl(0, 0, 29);
 $light-gray:hsl(0, 0, 97%);
 $white:#ffffff;
-// Fonts
-$oswald: 'Oswald', sans-serif;
 
 html{
 	font-size: 1.25em;
@@ -24,15 +22,13 @@ body{
 	justify-content:space-around;
 	overflow-x:hidden;
 }
-
 section{
 	padding: 1rem 0;
 }
 h1{
 	color:$black;
-	font-family:$oswald;
 	font-size: 3.5rem;
-	text-transform: uppercase;
+	letter-spacing: -4px;
 }
 h2{
 	color:$white;
@@ -40,7 +36,6 @@ h2{
 	font-weight: 400;
 	&.big{
 		color:$light-gray;
-		font-family: $oswald;
 		font-size: 6.5rem;
 		font-weight: 700;
 		letter-spacing: -5px;
@@ -58,6 +53,9 @@ header{
 	align-items:center;
 	justify-content:center;
 }
+.large-up{
+	display: none;
+}
 .header{
 	width: 90%;
 }
@@ -71,38 +69,58 @@ header{
 	justify-content:center;
 }
 .main-logo img{
-	padding:0 20px 0 0;
+	padding:10px 20px 0 0;
 	max-width: 90%;
 	height: 8vh;
 }
 .hi{
 	display: flex;
-	flex-direction:row;
+	flex-direction:column;
 	justify-content:flex-start;
 	flex:0 0 35rem;
 	h1{
-		line-height: 1.2;
+		font-size: 2.2rem;
+		line-height: 1;
+		margin-bottom: 2.8rem;
 	}
 	p{
-		font-family: $oswald;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 		text-transform: uppercase;
 	}
 	img{
 		// display: none;
-		margin-top: -50px;
-		transform:translateX(32%);
-	}	
+		margin-top: 0;
+		position: relative;
+		z-index: 100;
+	}
+	.dots:before,	
+	.dots:after{
+		content: url(../img/dots-big.png);
+		position: absolute;
+		top:60%;
+		left:76%;
+		z-index: 99;
+	}
+	.dots:before{
+		top:65%;
+		left:-10%;
+	}
 } 
 .button{
 	background: $primary-blue;
 	border:2px solid $primary-blue;
+	border-radius: 50px;
 	color:$white;
 	font-size: .8rem;
-	margin-bottom: 1rem;
-	padding:.5rem .75rem;
+	margin: 0 10px 1rem 0;
+	padding:.5rem 1rem .5rem 1.1rem;
+	position: relative;
 	text-decoration: none;
 	transition:background .3s;
+	&:hover{
+		background: $secondary-blue;
+		border: 2px solid $secondary-blue;
+	}
 	&.outline{
 		background: $white;
 		border:2px solid $primary-blue;
@@ -111,15 +129,19 @@ header{
 		&:hover{
 			background: $primary-blue;
 			color: $white;
+			.arrow{
+				fill:$white;
+			}
 		}
 	}
-	&:hover{
-		background: $secondary-blue;
-	}
+}
+.primary-blue{
+	background: $primary-blue;
 }
 .secondary-blue{
 	background: $secondary-blue;
 }
+section.primary-blue,
 section.secondary-blue{
 	display: flex;
 	flex-direction:column;
@@ -135,17 +157,42 @@ section.secondary-blue{
 	align-items:center;
 	display: flex;
 	flex-direction:column;
-	height: 92vh;
+	height: 99vh;
 	left:0;
 	position: absolute;
-	top:8vh;
+	top:1vh;
 	width:100%;
 	transform:translateX(100%);
 	transition: transform .5s ease-in;
+	z-index: 1000;
 	a{
 		color: $gray;
-		letter-spacing: 1px;	
+		font-size: .8rem;
+		letter-spacing: 2px;	
 		opacity: 0;
+		position: relative;
+		text-transform: uppercase;
+		transition: color 0.3s;
+		&:before{
+			font-size: .7rem;
+			position: absolute;
+			top: 115%;
+			left: 50%;
+			color: transparent;
+			content: '•';
+			text-shadow: 0 0 transparent;
+			-webkit-transition: text-shadow 0.3s, color 0.3s;
+			-moz-transition: text-shadow 0.3s, color 0.3s;
+			transition: text-shadow 0.3s, color 0.3s;
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			transform: translateX(-50%);
+			pointer-events: none;
+		}
+		&:hover::before, &:focus::before {
+			color: $gray;
+			text-shadow: 15px 0 $gray, -15px 0 $gray;
+		}
 	}
 	&.nav-active{
 		transform:translateX(0%);
@@ -163,6 +210,7 @@ section.secondary-blue{
 }
 .burger{
 	display: block;
+	z-index: 1001;
 	&:hover{
 		cursor: pointer;
 	}
@@ -239,8 +287,8 @@ footer{
 			opacity: 1;
 		}
 	}
-	section{
-		padding: 6rem 0;
+	.hi h1{
+		font-size: 4.2rem;
 	}
 }
 @media only screen and (min-width: 64em) {
@@ -251,22 +299,42 @@ footer{
 		width:40%;
 	}
 	.header, .hi, .secondary-blue .description{
-		width: 48rem;
+		width: 55rem;
 	}
 	section{
 		padding: 8rem 0;
 	}
-
+	.hi{
+		flex-direction:row;
+		img{
+			margin-top: -135px;
+			transform:translateX(20%);
+		}
+	}
 }
 /* large screens */
 @media only screen and (min-width: 90.063em) {
 	.header, .hi, .secondary-blue .description{
 		width: 64rem;
 	}
+	.large-up{
+		display: block;
+	}
+	.hi{
+		.dots:before{
+			top:50%;
+			left:5%;
+		}
+	}
 }
 /* xlarge screens */
 @media only screen and (min-width: 120.063em) {
 	.header, .hi, .secondary-blue .description{
 		width: 84rem;
+	}
+	.hi{
+		img{
+			transform: translateX(71%);
+		}
 	}
 }
