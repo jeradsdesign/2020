@@ -82,8 +82,8 @@ section{
 		padding:1rem 0;
 	}
 	&.title{
-		margin-bottom: 1.8rem;
-		padding:1.5rem;
+		margin-bottom: .3rem;
+		padding:.5rem;
 	}
 }
 .action{
@@ -127,6 +127,9 @@ p{
 a{
 	color: $secondary-blue;
 	text-decoration: none;
+	&:hover{
+		color:$primary-blue;
+	}
 }
 hr{
 	border: 1px solid $light-gray;
@@ -276,10 +279,10 @@ header{
 	z-index: 100;
 	h1{
 		color: $white;
-		margin-bottom: .5rem;
 	}
 	h2{
 		margin-bottom: 0;
+		margin-top: .5rem;
 	}
 }
 .primary-gray{
@@ -397,6 +400,11 @@ section.secondary-blue{
 		background: $gray;
 		margin: .5rem .5rem 1rem .5rem;
 		padding:.5rem;
+		transition:all .3s;
+		&:hover{
+			background: #ddd;
+			margin-top:.6rem;
+		}
 	}
 	p{
 		font-size: .9rem;
@@ -428,7 +436,8 @@ a.read-more{
 }
 .post-list{
 	li{
-		box-shadow: 0 2px 5px 4px $light-gray;
+		border: 1px solid #f1f1f1;
+		box-shadow: 1px 2px 15px 3px $light-gray;
 		margin: 0 1rem 2rem 1rem;
 		padding: 2rem 2rem 1rem;
 		&:first-child{
@@ -463,6 +472,32 @@ a.read-more{
 .blog h2.big{
 	font-size: 5.2rem;
 }
+
+section{
+
+	&.recent-work{
+
+		.example1,
+		.example2{
+
+		}
+		&.work{
+			.example1{
+				
+			}
+			.example2{
+				
+			}
+			& .main-width{
+				width:100%;
+			}
+		}
+	}
+	&.blue-header{
+
+	}
+}
+
 footer.big{
 	background: $light-gray;
 	display: flex;
@@ -524,6 +559,7 @@ footer.small{
 		font-size: .7rem;
 	}
 }
+
 @media only screen and (min-width: 40.063em) {
 	header{
 		box-shadow: none;
@@ -578,9 +614,40 @@ footer.small{
 		margin-left: 67%;
 		max-width: 33%;
 	}
+	section{
+		&.title{
+			margin-bottom: 1.8rem;
+			padding: 1.5rem;
+		}
+
+		&.recent-work{
+
+			.example1,
+			.example2{
+
+			}
+			&.work{
+				.example1{
+					margin:0 2% 20px 0;
+					width:50% - 2%;
+				}
+				.example2{
+					margin: 0 0 20px 2%;
+					width:50% - 2%;
+				}
+				& .main-width{
+					display: flex;
+					flex-wrap:wrap;
+				}
+			}
+		}
+		&.blue-header{
+
+		}
+	}
 	footer.big{
 		img{
-			min-width:70px;
+			width:70px;
 		}
 	}
 
@@ -601,7 +668,8 @@ footer.small{
 	.header,
 	.hi,
 	.secondary-blue .description,
-	.main-width{
+	.main-width,
+	section.recent-work.work .main-width{
 		width: 55rem;
 	}
 	section{
@@ -614,6 +682,18 @@ footer.small{
 			.example1,
 			.example2{
 				width: 490px;
+			}
+			&.work{
+				.example1{
+					
+				}
+				.example2{
+					
+				}
+				& .main-width{
+					display: flex;
+					flex-wrap:wrap;
+				}
 			}
 		}
 		&.blue-header{
@@ -654,7 +734,8 @@ footer.small{
 	.header,
 	.hi,
 	.secondary-blue .description,
-	.main-width{
+	.main-width,
+	section.recent-work.work .main-width{
 		width: 64rem;
 	}
 	.large-up{
@@ -689,7 +770,8 @@ footer.small{
 	.header,
 	.hi,
 	.secondary-blue .description,
-	.main-width{
+	.main-width,
+	section.recent-work.work .main-width{
 		width: 84rem;
 	}
 	.hi{

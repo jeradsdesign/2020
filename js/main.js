@@ -97,9 +97,10 @@ function smoothScroll(target, duration){
 	requestAnimationFrame(animation);
 }
 
-var scrollElement = document.querySelector('.scrollLink');
+var scrollElement = document.querySelector('.home .scrollLink');
 
-scrollElement.addEventListener('click', function(){
+scrollElement.addEventListener('click', function(e){
+	e.preventDefault();
 	smoothScroll('.scrollTarget', 1500);
 });
 
